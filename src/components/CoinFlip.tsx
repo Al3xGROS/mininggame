@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 
-const CoinFlip = () => {
+const CoinFlip = ({onFlipResult}: {onFlipResult: any}) => {
     const [isFlipping, setFlipping] = useState(false)
-    const [result, setResult] = useState<'Heads' | 'Tails' | null>(null)
+    const [result, setResult] = useState<'You' | 'HM' | null>(null)
 
     const handleFlip = () => {
         if (!isFlipping) {
@@ -12,9 +12,10 @@ const CoinFlip = () => {
             setResult(null)
 
             setTimeout(() => {
-                const randomResult = Math.random() < 0.5 ? 'Heads' : 'Tails'
+                const randomResult = Math.random() < 0.5 ? 'You' : 'HM'
                 setResult(randomResult)
                 setFlipping(false)
+                onFlipResult(randomResult === 'You')
             }, 1500)
         }
     }
