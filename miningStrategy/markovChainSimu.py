@@ -144,4 +144,4 @@ def simulation3():
     print(f"INITIAL VALUES : [a = 0, h = 0, n = 200, q = 0.3294]")
     print(f"RESULT : {result}")
 
-simulation3()
+simulation2()
